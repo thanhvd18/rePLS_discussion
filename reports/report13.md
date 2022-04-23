@@ -61,13 +61,13 @@ When Z affects X (2) and (4), we can see clearly how Z affects not only in distr
 
 However in feature space, let look at the figure bellow
 ![](images/w13_report3_SNRZX_10.png)
-We can see clearly how confounders (age for example) affect both input feature and projected features. In Partial Least Square (PLS) regression, we regress directly X to y and dont use any infomation of Z. By project X in input loading matrix $P$ in PLS, we can see some patterns of features against age. However, by using re-PLS, we remove this confounder effects. Therefore, rePLS features give a better explanation than PLS's in term of neurobiology. When we increase the level that Z affects X (for example SNR_ZX = 0), we can see it more clearly in both input features and projected features
+We can see clearly how confounders (age for example) affect both input feature and projected features. In Partial Least Square (PLS) regression, we regress directly X to y and dont use any infomation of Z. By projecting X in input loading matrix $P$ in PLS, we can see some patterns of features against age. However, by using re-PLS, we remove this confounder effects. Therefore, rePLS features give a better explanation than PLS's in term of neurobiology. When we increase the level that Z affects X (for example SNR_ZX = 0), we can see it more clearly in both input features and projected features
 ![](images/w13_report1_SNRZX_0.png)
 ![](images/w13_report2_SNRZX_0.png)
 ![](images/w13_report3_SNRZX_0.png)
-. However, if Z affects X too much both rePLS and PLS give same low performace.
+. However, if Z affects X too much both rePLS and PLS give same low performance.
 
-When Z affects y (3), re-PLS can outperform  PLS in accuracy (MSE, correlation corefficent). And in the last scenerio, the result is not very clearly, I suppose we need to consider how much similarity Z and Z_true (in this case Z_true is Z_balance).
+When Z affects y (3), re-PLS can outperform  PLS in accuracy (MSE, correlation coefficient). And in the last scenario, the result is not very clearly, I suppose we need to consider how much similarity between Z and Z_true (in this case Z_true is Z_balance).
 
 ### 2. Evaluation
 To evaluate wherether re-PLS, PLS can be able to uncover the truth ($PQ_{true}$), I use (i) correlation coefficient, (2) cosin distance and  (3)plotting signals.
