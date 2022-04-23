@@ -40,7 +40,7 @@ X_{true} = U(:,:R_X)S(:R_x,:R_x)V(:,:R_x)^T$$
 Where $\alpha$ is setted as $\textrm{rand}(K,K)$, is regression coefficient matrix from input score matrix to output score matrix and Q is setted as $\textrm{rand}(K,J)$, is output loading maxtrix in PLS algorithm.
 The observation of input can be modeled like that:
 $$X_{observe} = X_{true} + Noise_X+ f_{ZX}(Z_{balance})$$
-Where $Noise_X$ is represented as input noisy measurement. $Noise_X$ can be controled by parameter $SNR_X$ (be the same for every features). $SNR_X = \frac{1}{I}\sum_i^I SNR_{X(:,i)}, SNR_{X(:,i)}= 20\log\frac{\sum_j X_{true}(j,i)}{\sum_j Noise_{X}(j,i)}$. I use uniform distribution and normal distribution to simulate $Noise_X$. For each features/columns $Noise_{X(:,i)}= \textrm{randn}(N,1))  \sqrt(\frac{\sum_j X_{true}^2(j,i)}{SNR_X})$ and $Noise_{X(:,i)}= \frac{\textrm{rand}(N,1))}{\sqrt(1/12)}  \sqrt(\frac{\sum_j X_{true}^2(j,i)}{SNR_X})$ because $\textrm{VAR}[\textrm{uniform distribution}] = 1/12$. The function $f_X$ model how $Z$ affects $X$. Asssume that, $Z$ affects $X$ equally and of course,$Z$ can be weighted in some specific ages or genders, it depends on the types of diseases or the outcomes we measure. In this simulation, I choose $f_X$ as linear transformation $f_X = Z_{balance} \beta_{ZX}$, $\beta_{ZX} \in \mathbb{R}^{R \times I}$ is randomly initialized. The parameter $SNR_{ZX}$ controls how much effects Z have on X. Similarly, I define $SNR_{ZX} = \frac{1}{I}\sum_i^I SNR_{f_{ZX}(:,i)}, SNR_{f_{ZX}(:,i)}= 20\log\frac{\sum_j X_{true}(j,i)}{\sum_j f_{ZX}(j,i)}$. For each features/columns $f_{ZX}(:,i)= \textrm{randn}(N,1))  \sqrt(\frac{\sum_j X_{true}^2(j,i)}{SNR_{ZX}})$ and $f_{ZX}(:,i)= \frac{\textrm{rand}(N,1))}{\sqrt(1/12)}  \sqrt(\frac{\sum_j X_{true}^2(j,i)}{SNR_{ZX}})$.
+Where $Noise_X$ is represented as input noisy measurement. $Noise_X$ can be controled by parameter $SNR_X$ (be the same for every features). $SNR_X = \frac{1}{I}\sum_i^I SNR_{X(:,i)}, SNR_{X(:,i)}= 20\log\frac{\sum_j X_{true}(j,i)}{\sum_j Noise_{X}(j,i)}$. I use uniform distribution and normal distribution to simulate $Noise_X$. For each features/columns $Noise_{X(:,i)}= \textrm{randn}(N,1))  \sqrt(\frac{\sum_j X_{true}^2(j,i)}{SNR_X})$ and $Noise_{X(:,i)}= \frac{\textrm{rand}(N,1))}{\sqrt(1/12)}  \sqrt(\frac{\sum_j X_{true}^2(j,i)}{SNR_X})$ because $\textrm{VAR}[\textrm{uniform distribution}] = 1/12$. The function $f_X$ model how $Z$ affects $X$. Asssume that $Z$ affects $X$ equally and of course, $Z$ can be weighted in some specific ages or genders, it depends on the types of diseases or the outcomes we measure. In this simulation, I choose $f_X$ as linear transformation $f_X = Z_{balance} \beta_{ZX}$, $\beta_{ZX} \in \mathbb{R}^{R \times I}$ is randomly initialized. The parameter $SNR_{ZX}$ controls how much effects Z have on X. Similarly, I define $SNR_{ZX} = \frac{1}{I}\sum_i^I SNR_{f_{ZX}(:,i)}, SNR_{f_{ZX}(:,i)}= 20\log\frac{\sum_j X_{true}(j,i)}{\sum_j f_{ZX}(j,i)}$. For each features/columns $f_{ZX}(:,i)= \textrm{randn}(N,1))  \sqrt(\frac{\sum_j X_{true}^2(j,i)}{SNR_{ZX}})$ and $f_{ZX}(:,i)= \frac{\textrm{rand}(N,1))}{\sqrt(1/12)}  \sqrt(\frac{\sum_j X_{true}^2(j,i)}{SNR_{ZX}})$.
 The observation of output can be model like that:
 $$y_{observe} = y_{true} + Noise_y+ f_{Zy}(Z_{balance})$$
 where $y_{true} = X_{true} PQ_{true}$, $Noise_{y(:,i)}= \textrm{randn}(N,1))  \sqrt(\frac{\sum_j y_{true}^2(j,i)}{SNR_y})$ and $Noise_{y(:,i)}= \frac{\textrm{rand}(N,1))}{\sqrt(1/12)}  \sqrt(\frac{\sum_j y_{true}^2(j,i)}{SNR_y})$. $Noise_y$ represents something that are not come from PQ (for example other diseases) or latent factor. $f_y = Z_{balance} \beta_{Zy},\beta_{Zy} \in \mathbb{R}^{R \times J}$ is also randomly initialized.
@@ -48,14 +48,14 @@ where $y_{true} = X_{true} PQ_{true}$, $Noise_{y(:,i)}= \textrm{randn}(N,1))  \s
 ### 2. Evaluation
 Consider 4 scenerios as following:
  - Z does not affect both X,Y (1)
- - Z affect only X and does not affects Y (2)
- - Z affect only Y and does not affects X (3)
+ - Z affect only X and does not affect Y (2)
+ - Z affect only Y and does not affect X (3)
  - Z affect both X,Y (4)
  We use 2 types of metrices here: accuracy (through MSE, Correlation coefficent) Explanality (through  t-SNE visualization of the feature space.
 
 In scenerio (1) the performance of re-PLS and PLS are almost similar. 
 
-When Z affects X (2) and (4), we can see clearly how Z affects only in distribution of input measurements but also in feature space. With small effect setting SNR_ZX =10, we can see little different between distribution of X against gender and age groups.
+When Z affects X (2) and (4), we can see clearly how Z affects not only in distribution of input measurements but also in feature space. With small effect setting SNR_ZX =10, we can see little different between distribution of X against gender and age groups.
 ![](images/w13_report1.png)
 ![](images/w13_report2.png)
 
