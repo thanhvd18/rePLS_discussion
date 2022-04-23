@@ -74,7 +74,7 @@ To evaluate wherether re-PLS, PLS can be able to uncover the truth ($PQ_{true}$)
 
 #### Correlation coefficient
 ![](images/w13_report4.png)
-The figure about shows the the Correlation coefficient between PQ_i_true and PQ_i_estimated. However, I think that this metric consider PQ_i_true and PQ_i_estimated as 2 sample and not care about the order/the direction of vector PQ.
+The figure above shows the the Correlation coefficient between PQ_i_true and PQ_i_estimated. However, I think that this metric consider PQ_i_true and PQ_i_estimated as 2 sample and not care about the order/the direction of vector PQ.
 
 ####  Cosin distance (in degree)
 ![](images/w13_report5_1.png)
@@ -82,7 +82,7 @@ The figure about shows the the Correlation coefficient between PQ_i_true and PQ_
 To compare the direction between PQ_i_true and PQ_i_estimated, I calculate the cosin distance between PQ_true and PQ_estimated (0 deg means same direction and 90 deg means they are orthogonal). The results show that it is hard to uncover exactly the direction although the noise is very low (see figure below all SNR is 100), we still cannot get the true direction (0 deg)
 ![](images/w13_report5_3.png)
 #### Plotting signals
-The last way I use to compare PQ is to plot signals. I run 32 bootstraps (due to limitation of the vizualization toolboxs that can only process under 5000 rows). In each bootstrap, I sample 70% number of all sample (with replacement) for training and the rest for testing. After that, I plot confident interval of all bootstrap results(blue band) and compare to the truth signal (red line).
+The last way I use to compare PQ is to plot signals. I run 32 bootstraps (due to limitation of the vizualization toolboxes that can only process under 5000 rows). In each bootstrap, I sample 70% number of all sample (with replacement) for training and the rest for testing. After that, I plot confident interval of all bootstrap results(blue band) and compare to the truth signal (red line).
 ![](images/w13_report6.png)
 
 

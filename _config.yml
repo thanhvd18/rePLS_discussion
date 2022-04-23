@@ -5,4 +5,4 @@ description: Weekly reports
 
 theme: jekyll-theme-primer
 
-baseurl: "discussion"
+baseurl: "/rePLS_discussion"
