@@ -55,13 +55,13 @@ Consider 4 scenerios as following:
 
 In scenerio (1) the performance of re-PLS and PLS are almost similar. 
 
-When Z affects X (2) and (4), we can see clearly how Z affects not only in distribution of input measurements but also in feature space. With small effect setting SNR_ZX =10, we can see little different between distribution of X against gender and age groups.
+When Z affects X (2) and (4), we can see clearly how Z affects not only in distribution of input measurements but also in feature space. With small effect setting SNR_ZX =10, we can see little difference between distribution of X against gender and age groups.
 ![](images/w13_report1.png)
 ![](images/w13_report2.png)
 
 However in feature space, let look at the figure bellow
 ![](images/w13_report3_SNRZX_10.png)
-We can see clearly how confounders (age for example) affects. In Partial Least Square (PLS) regression, we regress directly X to y and dont use any infomation of Z. By project X in input loading matrix $P$ in PLS, we can see some patterns of features against age. However, by using re-PLS, we remove this confounder effects. Therefore, rePLS features give a better explanation than PLS's in term of neurobiology. When we increase the level that Z affects X (for example SNR_ZX = 0), we can see it more clearly in both input features and projected features
+We can see clearly how confounders (age for example) affect both input feature and projected features. In Partial Least Square (PLS) regression, we regress directly X to y and dont use any infomation of Z. By project X in input loading matrix $P$ in PLS, we can see some patterns of features against age. However, by using re-PLS, we remove this confounder effects. Therefore, rePLS features give a better explanation than PLS's in term of neurobiology. When we increase the level that Z affects X (for example SNR_ZX = 0), we can see it more clearly in both input features and projected features
 ![](images/w13_report1_SNRZX_0.png)
 ![](images/w13_report2_SNRZX_0.png)
 ![](images/w13_report3_SNRZX_0.png)
