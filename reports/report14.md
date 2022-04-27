@@ -52,6 +52,9 @@ LR training
 PLS training
 ![](images/PLS_train.png)
 
+$U,S,V = svd(X)\\
+$
+X_rotation = U*diag(rand)*V'*SNR
 
 LR testing + input small rotation 
 ![](images/LR_test1.png)
