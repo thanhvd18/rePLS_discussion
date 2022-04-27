@@ -21,7 +21,7 @@ Therefore, for example, we can guess that when Z does not affect X,Y and (Z only
 ## Simulation
 ![](images/report14_discussion1.png)
 
-### Feature not afected by confouder (Explanation) 
+### Features are not afected by confouder (Explanation) 
 ![](images/w13_report3_SNRZX_0.png)
 ![](images/w13_report3_SNRZX_10.png)
 
