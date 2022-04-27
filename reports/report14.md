@@ -64,6 +64,7 @@ PLS testing + input small rotation
 ![](images/w14_outlier2.png)
 
 ![](images/W14_robust_PLS.png)
+
 [Robust neural networks with random weights based on generalized M-estimation and PLS for imperfect industrial data modeling](pdf/j.conengprac.2020.104633.pdf) [1].
 
 ** Simulation Model**
