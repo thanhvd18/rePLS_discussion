@@ -7,6 +7,7 @@
 ----------------------------
 ----------------------------
 <!-- Writing check result, something feel not right=> check some mistakes -->
+<!-- some mistakes last weel -->
 # 1. Counfounder + residual regression vs directly regression
 ## Model
 ![](images/report14_discussion3.jpeg.png)
@@ -19,6 +20,13 @@ Therefore, for example, we can guess that when Z does not affect X,Y and (Z only
 
 ## Simulation
 ![](images/report14_discussion1.png)
+
+### Feature not afected by confouder (Explanation) 
+![](images/w13_report3_SNRZX_0.png)
+![](images/w13_report3_SNRZX_10.png)
+
+### Better results (Accuracy: MSE, correlation coefficent)
+
 In training/bootstrapping (resample), the results of re-PLS and PLS are almost the same. 
 ![](images/report14_discussion4.png)
 
@@ -54,7 +62,7 @@ PLS training
 
 $U,S,V = svd(X)\\
 $
-X_rotation = U*diag(rand)*V'*SNR
+X_rotation = X + U*diag(rand)*V'*SNR
 
 LR testing + input small rotation 
 ![](images/LR_test1.png)
